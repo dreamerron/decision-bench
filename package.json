@@ -1,0 +1,21 @@
+{
+  "name": "decision-bench",
+  "version": "0.1.0",
+  "description": "A labelled benchmark of the small decisions inside an AI agent harness — triage, review, browser safety, model routing, command intent — graded by code, for decision models (TypeSafe Jev), rule baselines and LLMs alike.",
+  "license": "MIT",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": { ".": { "types": "./dist/index.d.ts", "default": "./dist/index.js" } },
+  "bin": { "decision-bench": "./dist/cli.js" },
+  "files": ["dist", "data", "tools", "README.md", "LICENSE", "docs"],
+  "keywords": ["benchmark", "eval", "agent", "harness", "decision-model", "jev", "typesafe", "calibration", "guardrails"],
+  "engines": { "node": ">=18" },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "vitest run",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "prepublishOnly": "npm run test && npm run build"
+  },
+  "devDependencies": { "typescript": "^5.6.0", "vitest": "^2.1.0", "@types/node": "^22.0.0" }
+}
